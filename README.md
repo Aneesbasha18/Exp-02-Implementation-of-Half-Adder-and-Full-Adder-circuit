@@ -1,6 +1,8 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
+# Name:Aneesbasha J
+# Register number: 23003943
+# Exp 02:Implementation of Half Adder and Full Adder circuit
 
-# Implementation-of-Half-Adder-and-Full-Adder-circuit
+ Implementation-of-Half-Adder-and-Full-Adder-circuit
 ### AIM:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
@@ -34,21 +36,44 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+### Program:
+### (i)
+```
+module Halfadder (a,b,sum,carry);
+input a,b;
+output sum,carry;
+xor (sum,a,b);
+and (carry,a,b);
+endmodule
+```
+### (ii)
+```
+module Fulladder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+xor(sum,a,b,c);
+assign carry=a&b|c& a^ c&b ;
+endmodule
+```
+### RTL Realization
+#### (i)
+![Screenshot 2023-12-13 173413](https://github.com/Aneesbasha18/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154219883/2c51fd91-8c67-44d5-b958-57b2b75e51af)
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+#### (ii)
+![Screenshot 2023-12-18 155632](https://github.com/Aneesbasha18/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154219883/de27f870-eced-4a68-91bf-9fd232a535c7)
 
+### Time Table
+#### (i)
+![Screenshot 2023-12-18 122856](https://github.com/Aneesbasha18/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154219883/01fa4dc8-0fd0-43b7-8961-8c1fdf66c749)
+#### (ii)
+![Screenshot 2023-12-18 123750](https://github.com/Aneesbasha18/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154219883/c909a641-bc33-416f-9513-1c0f5e4a264c)
 
-### TRUTH TABLE 
+### Timing Diagram
+#### (i)
+
+![Screenshot 2023-12-18 104912](https://github.com/Aneesbasha18/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154219883/3d654d0a-477a-4504-a221-28426237b04b)
+#### (ii)
+![Screenshot 2023-12-18 110556](https://github.com/Aneesbasha18/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154219883/32c7f991-c8db-4f66-accd-ac6ad9e60344)
 
 ### Result:
+Thus,half adder and full adder are studied and the truth table for different logic gates are verified.
